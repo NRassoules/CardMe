@@ -105,9 +105,22 @@
 #footer{
 	color: white;
 }
-#bio{
+@media screen and (min-width: 1000px){
+	#bio{
+		color: white;
+		font-size: 36px;
+		font-family: 'Bitter', sans-serif;
+		padding: 60px;
+		width: 70%;
+		margin: auto;
+	}
+}
+@media screen and (max-width: 999px){
+	#bio{
 	color: white;
-	font-size: 22px;
+	font-size: 28px;
 	font-family: 'Bitter', sans-serif;
 	padding: 20px;
+}
+
 }
