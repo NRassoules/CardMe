@@ -18,13 +18,20 @@
         <a href="index.html"><img src="http://i.imgur.com/LF4PLeE.png?1" id="martini"></a>
         <h1 class="title">CardMe</h1>
       </div>
+      <div id="hide">
       <p id="name">We detect you are at </p>
       <h2 id="cardedText">Were you carded?</h2>
-      <a href="percent.html"><button class="decision" id="yesButton">Yes</button></a>
-      <a href="percent.html"><button class="decision" id="noButton">No</button></a>
+      <button class="decision" id="yesButton">Yes</button></a>
+      <button class="decision" id="noButton">No</button></a>
     </br>
     <button class="decision" id="change">Wrong place</button>
     <h2 id="babyText">By clicking the buttons above, you verify that you are age 21 or older.</br></br></h2>
+    </div>
+    <div id="show">
+      <h2 id="percent"></h2>
+      <h3>percent of users at this establishment were carded when purchasing alcohol.</h3>
+      <a href="coupon.html"><button id="decision">Next</button></a>
+    </div>
     <footer>
       <p><a href="about.html" id="babyText2">About</a></p>
     </footer>
@@ -36,7 +43,9 @@
 <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
 <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
 <script type="text/javascript">
+
   $(document).ready(function(){
+    $('#show').hide();
     $('.title').hide().fadeIn(1500);
     $('#martini').hide().fadeIn(1500);
     $('.test').delay(1500).animate({'marginTop': '-160px'}, 2000);
@@ -50,7 +59,12 @@
 </script>
 <script>
 
-  var myDataRef = new Firebase('https://cardme.firebaseio.com/');
+$('.decison').click(function(){
+  $('#hide').hide();
+  $('#show').show();
+});
+
+/*  var myDataRef = new Firebase('https://cardme.firebaseio.com/');
     $('#yesButton').click(function(){ //user clicked the yes button
       console.log("test, made it into yes click.");
       if (myDataRef == null){
@@ -97,7 +111,8 @@
       }
     })
     })
-  });
+  });*/
+  
    var i = 0
    function getLocation() {
     if (navigator.geolocation) {
