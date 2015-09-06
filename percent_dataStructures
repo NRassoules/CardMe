@@ -1,0 +1,62 @@
+
+var name = data.businesses[i].name;
+
+var id = data.businesses[i].id;
+
+var bigArray = {};
+
+var percent = Math.floor((associativeArray["ID"]["Yes"] / associativeArray["ID"]["Total"])*100);
+
+<!-- var object = {key : {"Name" : name, "Yes" : int, "Total" : total}};
+ -->
+
+function create(id, name){
+ var object = {id: {"Name": name, "Yes": 0, "Total": 0}} 
+ //add object to bigArray 
+ bigArray.push(object);
+}
+
+function increment (id, option) {
+  var num = bigArray[id][option];
+  num++;
+  bigArray[id][option] = num;
+}
+
+function isInArray(id){
+  return(id in bigArray);
+}
+
+$("#yesbutton").click(function(){
+
+  if (isInArray(id)) {
+  
+   increment(id,"Yes");
+   increment(id,"Total");
+   
+  } else {
+    create(id,name)
+  } 
+  
+  $("#percent").replace(percent+"%");
+  //$("#yesbutton").replace("");
+  //$("#nobutton").replace("");
+
+ });
+ 
+
+$("#nobutton").click(function(){
+
+  if (isInArray(id)) {
+  
+   increment(id,"Total");
+   
+  } else {
+    create(id,name)
+  } 
+  
+  $("#percent").replace(percent+"%");
+  //$("#yesbutton").replace("");
+  //$("#nobutton").replace("");
+
+ });
+
