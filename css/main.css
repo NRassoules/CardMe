@@ -130,7 +130,13 @@
 	font-family: 'Bitter', sans-serif;
 	color: white;
 }
+.next{
+	padding-bottom: 20px;
+}
 
+.percentText{
+	font-size: 22px;
+}
 
 
 
