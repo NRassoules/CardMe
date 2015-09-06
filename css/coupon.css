@@ -55,6 +55,7 @@
 	width: 150px;
 	color: white;
 	text-align: center;
+	overflow-y:scroll; 
 
 }
 .jumbotron{
