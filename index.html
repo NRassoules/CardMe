@@ -218,7 +218,7 @@ $("#yesbutton").click(function(){
     create(id,name)
   } 
   
-  $("#percent").append(percent+"%");
+  $("#percent").append(Math.floor((Math.random()*100) + 1)+"%");
   //$("#yesbutton").replace("");
   //$("#nobutton").replace("");
 
@@ -235,7 +235,7 @@ $("#nobutton").click(function(){
     create(id,name)
   } 
   
-  $("#percent").replace(percent+"%");
+  $("#percent").append(Math.floor((Math.random()*100) + 1)+"%");
   //$("#yesbutton").replace("");
   //$("#nobutton").replace("");
 
