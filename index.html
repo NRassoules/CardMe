@@ -188,6 +188,7 @@ var id = data.businesses[i].id;
 var bigArray = {};
 
 var percent = Math.floor((associativeArray["ID"]["Yes"] / associativeArray["ID"]["Total"])*100);
+console.log(percent);
 
 function create(id, name){
  var object = {id: {"Name": name, "Yes": 0, "Total": 0}} 
