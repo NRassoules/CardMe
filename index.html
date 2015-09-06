@@ -180,38 +180,14 @@ parameters.push(['term', terms]);
         $('#name').replaceWith('<p id="name">Oh! So you must be at '+data.businesses[i].name+'.</p>');
         $('#image').replaceWith('<br><img src='+data.businesses[i].image_url+'>');
         yelpID = data.businesses[i].id;
-      });
-    }
-  });
-}
-function showError(error) {
-  switch(error.code) {
-    case error.PERMISSION_DENIED:
-    console.log("User denied the request for Geolocation.");
-    break;
-    case error.POSITION_UNAVAILABLE:
-    console.log("Location information is unavailable.");
-    break;
-    case error.TIMEOUT:
-    console.log("The request to get user location timed out.");
-    break;
-    case error.UNKNOWN_ERROR:
-    console.log("An unknown error occurred.");
-    break;
-  }
-}
-getLocation();
-
-var name = data.businesses[i].name;
+        
+        var name = data.businesses[i].name;
 
 var id = data.businesses[i].id;
 
 var bigArray = {};
 
 var percent = Math.floor((associativeArray["ID"]["Yes"] / associativeArray["ID"]["Total"])*100);
-
-<!-- var object = {key : {"Name" : name, "Yes" : int, "Total" : total}};
- -->
 
 function create(id, name){
  var object = {id: {"Name": name, "Yes": 0, "Total": 0}} 
@@ -262,6 +238,27 @@ $("#nobutton").click(function(){
   //$("#nobutton").replace("");
 
  });
+      });
+    }
+  });
+}
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+    console.log("User denied the request for Geolocation.");
+    break;
+    case error.POSITION_UNAVAILABLE:
+    console.log("Location information is unavailable.");
+    break;
+    case error.TIMEOUT:
+    console.log("The request to get user location timed out.");
+    break;
+    case error.UNKNOWN_ERROR:
+    console.log("An unknown error occurred.");
+    break;
+  }
+}
+getLocation();
 
 </script>
 </body>
