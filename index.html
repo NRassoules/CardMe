@@ -51,7 +51,6 @@
     <script>
 
     var myDataRef = new Firebase('https://cardme.firebaseio.com/');
-
     $('#yesButton').click(function(){ //user clicked the yes button
     console.log("test, made it into yes click.");
     if (myDataRef == null){
@@ -73,10 +72,8 @@
       //myDataRef.set({id: "yelpID", yes: 1, total: 1});
       myDataRef.orderByValue().once('value', function(snapshot){
       console.log(snapshot.val().id);
-
       snapshot.forEach(function(data){
         console.log(snapshot.val().id == "yelpID");
-
         
       if (snapshot.val().id == "yelpID"){
           var yesnext = snapshot.val().yes + 1;
@@ -90,7 +87,6 @@
     });
       
    $('#noButton').click(function(){ //user clicked the no button
-
       myDataRef.orderByValue().once('value', function(snapshot){
       snapshot.forEach(function(data){
       if (snapshot.val().id == "yelpID"){
@@ -159,6 +155,7 @@
   'data' : parameterMap,
   'dataType' : 'jsonp',
   'jsonpCallback' : 'cb',
+  cache: true,
   'success' : function(data, textStats, XMLHttpRequest) {
   console.log(data);
   $('#name').append(data.businesses[i].name);
